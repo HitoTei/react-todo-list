@@ -11,7 +11,7 @@ function App() {
                 value={taskName}
                 onChange={(event) => setTaskName(event.target.value)}
                 onKeyDown={(event) => {
-                    if (event.key === "Enter") {
+                    if (event.key === "Enter" && taskName !== "") {
                         setTaskName("")
                         setTaskList([...taskList, {name: taskName, checked: false}])
                     }
